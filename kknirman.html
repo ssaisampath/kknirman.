@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>KK NIRMAN</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<style>
+
+
+@import url("https://fonts.googleapis.com/css?family=Exo:300");
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Exo", sans-serif;
+      font-size: 16px;
+      
+    }
+    
+    .wrap-loader {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+              flex-direction: column;
+      -webkit-box-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+              align-items: center;
+      height: 100vh;
+      background: #000;
+    }
+    
+    .loader {
+      position: relative;
+      width: 20rem;
+      height: 20rem;
+    
+    }
+    .loader::before {
+        
+      z-index: 1;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      width: 8.6956521739rem;
+      height: 8.6956521739rem;
+      background: #000;
+      border-radius: 50%;
+    }
+    .loader .box {
+      position: absolute;
+      width: 10rem;
+      height: 10rem;
+      overflow: hidden;
+    }
+    .loader .box::before {
+        
+      content: ''; 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      opacity: 0;
+    }
+    .loader .box:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+    .loader .box:nth-child(1)::before {
+      top: 50%;
+      left: 50%;
+      background: #4185F3;
+      -webkit-animation: lightMe1 4s ease-out infinite normal;
+              animation: lightMe1 4s ease-out infinite normal;
+    }
+    .loader .box:nth-child(2) {
+      top: 0;
+      right: 0;
+    }
+    .loader .box:nth-child(2)::before {
+      top: 50%;
+      right: 50%;
+      background: #33A753;
+      -webkit-animation: lightMe2 4s ease-out infinite normal;
+              animation: lightMe2 4s ease-out infinite normal;
+    }
+    .loader .box:nth-child(3) {
+      bottom: 0;
+      right: 0;
+    }
+    .loader .box:nth-child(3)::before {
+      bottom: 50%;
+      right: 50%;
+      background: #FABB04;
+      -webkit-animation: lightMe3 4s ease-out infinite normal;
+              animation: lightMe3 4s ease-out infinite normal;
+    }
+    .loader .box:nth-child(4) {
+      bottom: 0;
+      left: 0;
+    }
+    .loader .box:nth-child(4)::before {
+      bottom: 50%;
+      left: 50%;
+      background: #E94234;
+      -webkit-animation: lightMe4 4s linear infinite normal;
+              animation: lightMe4 4s linear infinite normal;
+    }
+    .loader .wrap-text {
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      overflow: hidden;
+    }
+    .loader .text {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      -webkit-animation: slider 8s ease-in infinite;
+              animation: slider 8s ease-in infinite;
+    }
+    .loader .text span {
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 2em;
+      color: #fff;
+    }
+    
+    .loader-text {
+      color: #fff;
+      -webkit-transform: translateY(-2rem);
+              transform: translateY(-2rem);
+      letter-spacing: 6px;
+      opacity: .2;
+      -webkit-animation: blink 1s ease-out infinite alternate;
+              animation: blink 1s ease-out infinite alternate;
+    }
+    
+    @-webkit-keyframes lightMe1 {
+      0% {
+        opacity: 0.1;
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes lightMe1 {
+      0% {
+        opacity: 0.1;
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes lightMe2 {
+      0% {
+        opacity: 0.1;
+      }
+      25% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes lightMe2 {
+      0% {
+        opacity: 0.1;
+      }
+      25% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes lightMe3 {
+      0% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes lightMe3 {
+      0% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.1;
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes lightMe4 {
+      0% {
+        opacity: 0.1;
+      }
+      75% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes lightMe4 {
+      0% {
+        opacity: 0.1;
+      }
+      75% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes slider {
+      0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+      }
+      10.5% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+      }
+      12.5% {
+        -webkit-transform: translateY(-40px);
+                transform: translateY(-40px);
+      }
+      23% {
+        -webkit-transform: translateY(-40px);
+                transform: translateY(-40px);
+      }
+      25% {
+        -webkit-transform: translateY(-80px);
+                transform: translateY(-80px);
+      }
+      35% {
+        -webkit-transform: translateY(-80px);
+                transform: translateY(-80px);
+      }
+      37.5% {
+        -webkit-transform: translateY(-120px);
+                transform: translateY(-120px);
+      }
+      47.5% {
+        -webkit-transform: translateY(-120px);
+                transform: translateY(-120px);
+      }
+      50% {
+        -webkit-transform: translateY(-160px);
+                transform: translateY(-160px);
+      }
+      60% {
+        -webkit-transform: translateY(-160px);
+                transform: translateY(-160px);
+      }
+      62.5% {
+        -webkit-transform: translateY(-200px);
+                transform: translateY(-200px);
+      }
+      72.5% {
+        -webkit-transform: translateY(-200px);
+                transform: translateY(-200px);
+      }
+      75% {
+        -webkit-transform: translateY(-240px);
+                transform: translateY(-240px);
+      }
+      85% {
+        -webkit-transform: translateY(-240px);
+                transform: translateY(-240px);
+      }
+      87.5% {
+        -webkit-transform: translateY(-280px);
+                transform: translateY(-280px);
+      }
+      100% {
+        -webkit-transform: translateY(-280px);
+                transform: translateY(-280px);
+      }
+    }
+    @keyframes slider {
+      0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+      }
+      10.5% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+      }
+      12.5% {
+        -webkit-transform: translateY(-40px);
+                transform: translateY(-40px);
+      }
+      23% {
+        -webkit-transform: translateY(-40px);
+                transform: translateY(-40px);
+      }
+      25% {
+        -webkit-transform: translateY(-80px);
+                transform: translateY(-80px);
+      }
+      35% {
+        -webkit-transform: translateY(-80px);
+                transform: translateY(-80px);
+      }
+      37.5% {
+        -webkit-transform: translateY(-120px);
+                transform: translateY(-120px);
+      }
+      47.5% {
+        -webkit-transform: translateY(-120px);
+                transform: translateY(-120px);
+      }
+      50% {
+        -webkit-transform: translateY(-160px);
+                transform: translateY(-160px);
+      }
+      60% {
+        -webkit-transform: translateY(-160px);
+                transform: translateY(-160px);
+      }
+      62.5% {
+        -webkit-transform: translateY(-200px);
+                transform: translateY(-200px);
+      }
+      72.5% {
+        -webkit-transform: translateY(-200px);
+                transform: translateY(-200px);
+      }
+      75% {
+        -webkit-transform: translateY(-240px);
+                transform: translateY(-240px);
+      }
+      85% {
+        -webkit-transform: translateY(-240px);
+                transform: translateY(-240px);
+      }
+      87.5% {
+        -webkit-transform: translateY(-280px);
+                transform: translateY(-280px);
+      }
+      100% {
+        -webkit-transform: translateY(-280px);
+                transform: translateY(-280px);
+      }
+    }
+    @-webkit-keyframes blink {
+      from {
+        opacity: .2;
+      }
+      to {
+        opacity: .75;
+      }
+    }
+    @keyframes blink {
+      from {
+        opacity: .2;
+      }
+      to {
+        opacity: .75;
+      }
+    }
+    #overlay{
+       
+      height:100%;
+      width:100%;
+      background:rgba(0, 0, 0, 1);
+      position:fixed;
+      left:0;
+      top:0;
+     }
+    
+     .content{
+    
+        display:none;
+        
+     }
+
+
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.9;cursor:pointer}
+.w3-half img:hover{opacity:1}
+
+
+</style>
+<body>
+
+
+  <div id="overlay">
+    <div class="wrap-loader">
+      <div class="loader">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="wrap-text"> 
+          <div class="text"><span>K</span><span>K</span><span>N</span><span>I</span><span>R</span><span>M</span><span>A</span><span>N</span>
+          </div>
+        </div>
+      </div>
+      <div class="loader-text">C O N S T R U C T I O N S</div>    
+    </div>
+    </div>
+    
+    <div class="content">
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h2 class="w3-padding-64"><b>KK<br>NIRMAN</b></h2>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a>
+    <a href="#Projects" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Projects</a> 
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services</a> 
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>KK NIRMAN</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+ <br>
+ <!-- png -->
+ 
+ <div class="w3-row-padding">
+  <div class="w3-col m4 w3-margin-bottom">
+    <div class="w3-light-grey">
+      <img src="images/logo.png" alt="Kiran kumar" style="width:100%">
+      <div class="w3-container">
+        <h4>Kiran kumar</h4>
+        <p class="w3-opacity">Founder</p>
+        <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>KK'S</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Interior Design's.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="images/21.jpg" style="width:100%" onclick="onClick(this)" alt="">
+      <img src="images/25.jpg" style="width:100%" onclick="onClick(this)" alt="">
+      <img src="images/18jpg" style="width:100%" onclick="onClick(this)" alt="">
+    </div>
+
+    <div class="w3-half">
+      <img src="images/1.jpg" style="width:100%" onclick="onClick(this)" alt="">
+      <img src="images/6.jpg" style="width:100%" onclick="onClick(this)" alt="">
+      <img src="images/44.jpg" style="width:100%" onclick="onClick(this)" alt="">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+    <a href="link1.html" class="btn btn-danger" role="button">Show More</a>
+    <br>
+  </div>
+  
+
+  
+   <!-- Header -->
+   <div class="w3-container" style="margin-top:80px" id="Projects">
+    <h1 class="w3-jumbo"><b>KK'S</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Projects.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="images/h4.jpg" style="width:100%" onclick="onClick(this)" alt="AKKAYAPALEM SITE">
+      <img src="images/52.jpg" style="width:100%" onclick="onClick(this)" alt="AKKAYAPALEM SITE">
+      <img src="images/51.jpg" style="width:100%" onclick="onClick(this)" alt="AKKAYAPALEM SITE">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>We Provide Interior Design services and Constructions... that focus on what's best for your home and what's best for you!</p>
+    <p>Some text about our services - what we do and what we offer.Interior design is the art and science of understanding people's behavior to create functional spaces within a building. Decoration is the furnishing or adorning of a space with decorative elements, sometimes complemented by advice and practical assistance. In short, interior designers may decorate, but decorators do not design.
+    </p>
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Designers.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p> We Give The Best Output :) </p>
+    <p> Interior Designers bring to life an artistic vision for work and living spaces, seeing out a project from conception to creation. Design plans should be cognizant of safety and functionality requirements and maintain a strict adherence to building codes and regulatory standards.
+    </p>
+    <p><b></b>:</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding ">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="images/abt.jpg" alt="Kiran kumar" style="width:100%">
+        <div class="w3-container">
+          <h4>Kiran kumar</h4>
+          <p class="w3-opacity">Founder</p>
+          <!--<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+        </div>
+      </div>
+    </div>
+    
+  
+   <!-- Contact -->
+   <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-black"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid black" class="w3-round">
+    <p>Do you want us to style your home? Then Contact Us :) We love meeting new people!</p>
+    
+    <div class="w3-section">
+  <label for="fname">NAME:</label><br>
+  <input type="text" id="fname" name="fname" value="KIRAN KUMAR"><br>
+ </div>
+<div class="w3-section">
+  <label for="fname">EMAIL:</label><br>
+  <input type="text" id="fname" name="fname" value="Kirankumarbodetti07@gmail.com"><br>
+</div>
+<div class="w3-section">
+  <label for="fname">Mobile number:</label><br>
+  <input type="text" id="fname" name="fname" value="9963775658, 9248184045"><br>
+</div>
+     
+  </div>
+  
+     
+
+<!-- End page content -->
+</div>
+
+</div>
+
+
+<script>
+
+
+
+  
+var overlay = document.getElementById("overlay");
+    
+    window.addEventListener('load', function(){
+    
+    
+       
+        $("#overlay").fadeOut(9500, function()  {
+    
+        $(".content").fadeIn(100);
+    
+    
+    });
+      
+    });
+    
+
+
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
+
